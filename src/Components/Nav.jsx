@@ -3,25 +3,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Othercontext } from './Otherprovider'
 
 const Nav = () => {
-    const {opensigns}=useContext(Othercontext)
+    const {opensigns,searchos}=useContext(Othercontext)
     const [opensign,setopensign]=opensigns
+    const [searcho,setsearcho]=searchos
     const [sidebar,setsidebar]=useState(false)
-    const fetchdata=async()=>{
-        try {
-            const res = await axios.get("http://www.omdbapi.com/", {
-                params: {
-                    s: "scream", 
-                    apikey: "84a91855",
-                },
-            })
-            console.log(res.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    useEffect(()=>{
-         fetchdata()
-    },[])
+
 
 
   return (
@@ -33,7 +19,7 @@ const Nav = () => {
             <p></p>
         </div>
         <div className='moviehead'>
-            <h1><i className="fa-solid fa-clapperboard"></i><span>Find Movies</span></h1>
+            <h1><i className="fa-solid fa-clapperboard" style={{zIndex:"999"}}></i><span>Find Movies</span></h1>
             <div>
                 <p>Home</p>
                 <p>Favorite Movies</p>
@@ -41,7 +27,7 @@ const Nav = () => {
         </div>
         <div className='moviesearch'>
             <span>
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass" onClick={()=>setsearcho(!searcho)}></i>
             </span>
             <p onClick={()=>setopensign("signin")}>SignIn/SignUp</p>
         </div>

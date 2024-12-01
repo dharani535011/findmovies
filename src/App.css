@@ -3,6 +3,9 @@
   font-family: "Fredoka" ,sans-serif;
   margin: 0px;
 }
+body{
+  overflow-x: hidden;
+}
 .movienav{
   position: fixed;
   top: 0;
@@ -14,6 +17,7 @@
   height: 60px;
   justify-content: space-between;
   align-items: center;
+  z-index: 9999;
 }
 .burgerbar{
   display: none;
@@ -90,7 +94,7 @@
 .sidebar{
   display: none;
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   top: 0;
   left: -120%;
   height: 100vh;
@@ -292,7 +296,85 @@ p{
   background-color: white;
 }
 }
+.searchmain{
+  position: fixed;
+  top: 0;
+  right: -120%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  transition: right ease .5s;
+  z-index: 999;
+}
+.searchbody{
+  margin-top: 65px;
+  width: 500px;
+  height: 500px;
+  /* background-color: rgba(0, 0, 0, .5); */
+  border-radius: 20px;
+  
+}
+.searchin{
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  input{
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid white;
+    /* background-color: transparent; */
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-size: 20px;
+  }
+  input::placeholder{
+    font-size: 20px;
+    color: white;
+  }
+  input:focus{
+    outline: none;
+  }
+}
+.searchlist{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 400px;
+  margin-top: 10px;
+}
+.searchlist::-webkit-scrollbar {
+  display: none;
+}
+.movies{
+  width: 97.5%;
+  height: 50px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+}
+.mded{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+}
+.searchi{
+  width: 30px;
+}
+.searchopen{
+  right: 0;
+}
 @media screen and (max-width:1000px) {
   .burgerbar{
     display: flex;
