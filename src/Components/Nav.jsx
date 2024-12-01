@@ -10,7 +10,7 @@ const Nav = () => {
         try {
             const res = await axios.get("http://www.omdbapi.com/", {
                 params: {
-                    s: "avengers endgame", 
+                    s: "scream", 
                     apikey: "84a91855",
                 },
             })

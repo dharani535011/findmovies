@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const Othercontext=createContext()
 const Contextprovider=({children})=>{
-    const [opensign,setopensign]=useState("signin")
+    const [opensign,setopensign]=useState("")
     return(
         <Othercontext.Provider value={{opensigns:[opensign,setopensign]}}>
             {children}

@@ -217,6 +217,81 @@
       cursor: pointer;
     }
 }
+.forgetpassh{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forgetpassb{
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border-radius: 5px;
+}
+.common{
+  width: 80vw;
+  height: 80vh;
+
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 25px;
+}
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15,16,20);
+}
+.commoncontainer{
+  display: flex;
+  img{
+      flex-shrink: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      pointer-events: none;
+  }
+}
+.dash{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 70px;
+  align-items: center;
+}
+.dashbut{
+  margin-right: 20px;
+  button{
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+}
+.po{
+  margin-left: 20px;
+  display: flex;
+  gap: 8px;
+p{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+}
+}
 
 @media screen and (max-width:1000px) {
   .burgerbar{
@@ -252,6 +327,9 @@
   width: 90vw;
 }
 .signbody{
+  width: 90vw;
+}
+.forgetpassb{
   width: 90vw;
 }
 }
