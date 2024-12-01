@@ -11,7 +11,7 @@ const Search = () => {
 
     const fetchdata = async () => {
         try {
-            const res = await axios.get("http://www.omdbapi.com/", {
+            const res = await axios.get("https://www.omdbapi.com/", {
                 params: {
                     s: search,
                     apikey: "84a91855",
