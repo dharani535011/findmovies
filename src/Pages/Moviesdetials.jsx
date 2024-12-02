@@ -12,7 +12,7 @@ const Moviesdetials = () => {
     const [heart,setheart]=useState(false)
     const fetchdata=async()=>{
         try {
-            const res=await axios.get( `http://www.omdbapi.com/?i=${id}&apikey=${"84a91855"}`)
+            const res=await axios.get( `https://www.omdbapi.com/?i=${id}&apikey=${"84a91855"}`)
             setdata(res.data)
         } catch (error) {
             console.log(error)
@@ -48,7 +48,7 @@ const Moviesdetials = () => {
       }, [data, favlist])
 
 
-    console.log(favlist)
+    // console.log(favlist)
   return (
 <>
 
