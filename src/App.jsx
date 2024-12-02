@@ -3,12 +3,16 @@ import "./App.css"
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import Forgetpass from './Components/Forgetpass'
+import Moviesdetials from './Pages/Moviesdetials'
+import Favmovies from './Pages/Favmovies'
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/forgetpass' element={<Forgetpass/>} />
+        <Route path='/moviedetials/:id' element={<Moviesdetials/>} />
+        <Route path='/favmovies' element={<Favmovies/>} />
       </Routes>
     </div>
   )

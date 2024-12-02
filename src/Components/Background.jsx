@@ -126,7 +126,7 @@ const Background = () => {
     <div className='dash'>
         <div className='po'>
         {imgs.map((va,i)=>(
-            <p style={{backgroundColor:i==currentIndex?"rgb(0,175,255)":"white"}}></p>
+            <p key={i} style={{backgroundColor:i==currentIndex?"rgb(0,175,255)":"white"}}></p>
         ))}
         </div>
      <div className='dashbut'>

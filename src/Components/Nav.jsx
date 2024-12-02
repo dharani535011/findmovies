@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { Othercontext } from './Otherprovider'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
     const {opensigns,searchos}=useContext(Othercontext)
@@ -22,7 +23,7 @@ const Nav = () => {
             <h1><i className="fa-solid fa-clapperboard" style={{zIndex:"999"}}></i><span>Find Movies</span></h1>
             <div>
                 <p>Home</p>
-                <p>Favorite Movies</p>
+                <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
             </div>
         </div>
         <div className='moviesearch'>
@@ -43,7 +44,7 @@ const Nav = () => {
                 setopensign("signin")}}>SignIn/SignUp</button>
             <hr />
             <p>Home</p>
-            <p>Favorite Movies</p>
+            <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
             </div>
        </div>
     </div>
