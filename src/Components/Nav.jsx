@@ -22,7 +22,7 @@ const Nav = () => {
         <div className='moviehead'>
             <h1><i className="fa-solid fa-clapperboard" style={{zIndex:"999"}}></i><span>Find Movies</span></h1>
             <div>
-                <p>Home</p>
+                <p><Link to={"/"} style={{all:"unset"}}>Home</Link></p>
                 <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
             </div>
         </div>
@@ -43,7 +43,7 @@ const Nav = () => {
                 setsidebar(false)
                 setopensign("signin")}}>SignIn/SignUp</button>
             <hr />
-            <p>Home</p>
+            <p><Link to={"/"} style={{all:"unset"}}>Home</Link></p>
             <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
             </div>
        </div>

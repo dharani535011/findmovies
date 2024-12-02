@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Nav from '../Components/Nav'
 import Search from '../Components/Search'
 import { Othercontext } from '../Components/Otherprovider'
@@ -6,10 +6,12 @@ import { Othercontext } from '../Components/Otherprovider'
 const Favmovies = () => {
     const {favlists}=useContext(Othercontext)
     const [favlist,setfavlist]=favlists
+
     const handledel=(id)=>{
         const updatedFavList = favlist.filter((val) => val.imdb !== id);
         setfavlist(updatedFavList)
     }
+
 
   return (
 <>
@@ -17,9 +19,10 @@ const Favmovies = () => {
 <Search/>
 <div className='favmain'>
         <div className='favbody'>
+            {favlist.length==0&&<h1 style={{textAlign:"center"}}>List is Empty!</h1>}
             {
-                favlist.map((val)=>(
-                    <span className='favmovie'>
+                favlist.map((val,i)=>(
+                    <span className='favmovie' key={i}>
 
                     <div>
                         <p>{val.title}</p>
