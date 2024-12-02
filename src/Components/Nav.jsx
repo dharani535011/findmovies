@@ -14,7 +14,10 @@ const Nav = () => {
   return (
     <div>
        <div className='movienav'>
-        <div className='burgerbar' onClick={()=>setsidebar(true)}>
+        <div className='burgerbar' onClick={()=>{
+            setopensign(false)
+            setsearcho(false)
+            setsidebar(true)}}>
             <p></p>
             <p></p>
             <p></p>
@@ -22,15 +25,23 @@ const Nav = () => {
         <div className='moviehead'>
             <h1><i className="fa-solid fa-clapperboard" style={{zIndex:"999"}}></i><span>Find Movies</span></h1>
             <div>
-                <p><Link to={"/"} style={{all:"unset"}}>Home</Link></p>
-                <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
+                <p><Link to={"/"} onClick={()=>{
+                    setsidebar(false)
+                    setopensign(false)
+                    setsearcho(false)}} style={{all:"unset"}} >Home</Link></p>
+                <p><Link to={"/favmovies"} style={{all:"unset"}} onClick={()=>setsearcho(false)}>Favorite Movies</Link></p>
             </div>
         </div>
         <div className='moviesearch'>
             <span>
-            <i className="fa-solid fa-magnifying-glass" onClick={()=>setsearcho(!searcho)}></i>
+            <i className="fa-solid fa-magnifying-glass" onClick={()=>{
+                setsidebar(false)
+                setopensign(false)
+                setsearcho(!searcho)}}></i>
             </span>
-            <p onClick={()=>setopensign("signin")}>SignIn/SignUp</p>
+            <p onClick={()=>{
+                setsearcho(false)
+                setopensign("signin")}}>SignIn/SignUp</p>
         </div>
        </div>
        <div className={`sidebar ${sidebar&&"open"}`} >
@@ -40,11 +51,17 @@ const Nav = () => {
             </div>
             <div className='sideoptions'>
             <button onClick={()=>{
+                setsearcho(false)
                 setsidebar(false)
                 setopensign("signin")}}>SignIn/SignUp</button>
             <hr />
-            <p><Link to={"/"} style={{all:"unset"}}>Home</Link></p>
-            <p><Link to={"/favmovies"} style={{all:"unset"}}>Favorite Movies</Link></p>
+            <p><Link to={"/"} style={{all:"unset"}} onClick={()=>{
+                setopensign(false)
+                setsidebar(false)
+                setsearcho(false)}}>Home</Link></p>
+            <p><Link to={"/favmovies"} onClick={()=>{
+                setopensign(false)
+                setsearcho(false)}} style={{all:"unset"}}>Favorite Movies</Link></p>
             </div>
        </div>
     </div>
