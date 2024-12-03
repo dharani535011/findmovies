@@ -73,7 +73,7 @@ const Moviesdetials = () => {
               
                 <span className='moviebutton'>
                 <button>▶️ Watch Now</button>
-                <button onClick={handlefav}>{heart?"❤️":"🤍"} Add to Favorite</button>
+                <button onClick={handlefav}>{heart?"❤️ Remove from Favorites":"🤍 Add to Favorites"}</button>
               </span>
               </div>
 

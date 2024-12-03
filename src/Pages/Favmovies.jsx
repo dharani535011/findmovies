@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Nav from '../Components/Nav'
 import Search from '../Components/Search'
 import { Othercontext } from '../Components/Otherprovider'
+import { Link } from 'react-router-dom'
 
 const Favmovies = () => {
     const {favlists}=useContext(Othercontext)
@@ -22,7 +23,8 @@ const Favmovies = () => {
             {favlist.length==0&&<h1 style={{textAlign:"center"}}>List is Empty!</h1>}
             {
                 favlist.map((val,i)=>(
-                    <span className='favmovie' key={i}>
+                    <Link key={i} to={`/moviedetials/${val.imdb}`} style={{all:"unset"}}>
+                    <span className='favmovie' >
 
                     <div>
                         <p>{val.title}</p>
@@ -32,7 +34,7 @@ const Favmovies = () => {
                         <img src={val.poster} alt="img" />
                         <p onClick={()=>handledel(val.imdb)}>❤️</p>
                     </div>
-                </span>
+                </span></Link>
                 ))
             }
 

@@ -505,6 +505,7 @@ body::-webkit-scrollbar{
   border-radius: 8px;
   border-bottom: 1px solid black;
   margin-top: 2px;
+  cursor: pointer;
   div:nth-child(2){
     display: flex;
     justify-content: space-between;
