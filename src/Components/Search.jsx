@@ -43,7 +43,12 @@ const Search = () => {
             }
             return acc
         }, [])
-        localStorage.setItem("history",JSON.stringify(res))
+        let line=res.slice(-10).reverse()
+        // let line=[]
+        // for(let i=10;i>=0;i--){
+        //      line.push(res[i])
+        // }
+        localStorage.setItem("history",JSON.stringify(line))
       },[history])
 
     useEffect(() => {

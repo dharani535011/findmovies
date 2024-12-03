@@ -74,7 +74,7 @@ const Sign = () => {
            <div className='signin'>
                {opensign=="signup"&&<input type="text" placeholder='Name' name='name' value={data.name} onChange={handleinput}/>}
                <input type="text" placeholder='Email' value={data.mail} name='mail' onChange={handleinput}/>
-               {(opensign=="signin"||opensign=="signup")&&<input type="text" name='password' placeholder='Password' value={data.password} onChange={handleinput}/>}
+               {(opensign=="signin"||opensign=="signup")&&<input type="password" name='password' placeholder='Password' value={data.password} onChange={handleinput}/>}
                <button onClick={handlesubmit}>{opensign=="signup"?"SignUP":opensign=="signin"?"SignIn":"submit"}</button>
                <p onClick={()=>setopensign(opensign === "signup" ? "signin" : "signup")}>{opensign=="signup"?"SignIn":"SignUp"}</p>
                {opensign!=="forgetpass"&&<p style={{color:"blue",cursor:"pointer"}} onClick={()=>setopensign("forgetpass")}>forget password?</p>}
