@@ -5,7 +5,9 @@ import { Othercontext } from "./Otherprovider"
 import { Link } from "react-router-dom"
 
 const Search = () => {
-    const {searchos}=useContext(Othercontext)
+    const {searchos,loaders}=useContext(Othercontext)
+    // const {loaders}=useContext(Othercontext)
+    const [loader,setloader]=loaders
     const [searcho,setsearcho]=searchos
     const [search, setSearch] = useState("")
     const [datas, setDatas] = useState([])
@@ -15,6 +17,7 @@ const Search = () => {
     })
     const fetchdata = async () => {
         try {
+            setloader(true)
             const res = await axios.get("https://www.omdbapi.com/", {
                 params: {
                     s: search,
@@ -29,6 +32,8 @@ const Search = () => {
             }
         } catch (error) {
             console.error("Error fetching data:", error)
+        }finally{
+            setloader(false)
         }
     }
     useEffect(()=>{

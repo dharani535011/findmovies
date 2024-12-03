@@ -4,6 +4,11 @@ export const Othercontext=createContext()
 const Contextprovider=({children})=>{
     const [opensign,setopensign]=useState("")
     const [searcho,setsearcho]=useState()
+    const [loader,setloader]=useState(false)
+    const [auth,setauth]=useState(()=>{
+        
+        return localStorage.getItem("auth")||false
+    })
     const [favlist, setfavlist] = useState(() => {
         const savedFavList = localStorage.getItem("favmovies")
         return savedFavList ? JSON.parse(savedFavList) : []
@@ -17,7 +22,8 @@ const Contextprovider=({children})=>{
 
     return(
         <Othercontext.Provider value={{opensigns:[opensign,setopensign]
-            ,searchos:[searcho,setsearcho],favlists:[favlist,setfavlist]
+            ,searchos:[searcho,setsearcho],favlists:[favlist,setfavlist],
+            auths:[auth,setauth],loaders:[loader,setloader]
         }}>
             {children}
         </Othercontext.Provider>

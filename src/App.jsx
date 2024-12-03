@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./App.css"
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import Forgetpass from './Components/Forgetpass'
 import Moviesdetials from './Pages/Moviesdetials'
 import Favmovies from './Pages/Favmovies'
+import Loader from './Components/Loader'
+import { Othercontext } from './Components/Otherprovider'
 const App = () => {
+
   return (
     <div>
+      <Loader/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/forgetpass' element={<Forgetpass/>} />

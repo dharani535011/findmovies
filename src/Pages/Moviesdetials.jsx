@@ -6,16 +6,21 @@ import { Othercontext } from '../Components/Otherprovider'
 const Moviesdetials = () => {
     const {id}=useParams()
     const [data,setdata]=useState("")
-    const {favlists}=useContext(Othercontext)
+    const {favlists,loaders}=useContext(Othercontext)
+    // const {loaders}=useContext(Othercontext)
+    const [loader,setloader]=loaders
     const [favlist,setfavlist]=favlists
     // const [fav,setfav]=useState({})
     const [heart,setheart]=useState(false)
     const fetchdata=async()=>{
         try {
+          setloader(true)
             const res=await axios.get( `https://www.omdbapi.com/?i=${id}&apikey=${"84a91855"}`)
             setdata(res.data)
         } catch (error) {
             console.log(error)
+        }finally{
+          setloader(false)
         }
     }
     useEffect(()=>{
